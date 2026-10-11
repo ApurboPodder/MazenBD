@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add a Project — Mazen(BD) Industries LTD</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body class="admin-page">
+  <div class="admin-app">
+    <header class="admin-header">
+      <a href="gallery.html" class="admin-brand">
+        <img class="site-logo" src="assets/Logo/Mazen%20Logo.png" alt="Mazen(BD) Industries LTD">
+        <span>Project publishing</span>
+      </a>
+      <a class="admin-back" href="gallery.html">← Back to gallery</a>
+      <button class="admin-theme-toggle" type="button" data-theme-toggle>Dark mode</button>
+    </header>
+
+    <main class="admin-main">
+      <p class="admin-eyebrow">GITHUB PAGES · PROJECT ADMIN</p>
+      <h1>Publish a project.</h1>
+      <p class="admin-lede">Add an eyewear project and its cover image. The new card and image will be committed to your repository, then published by GitHub Pages.</p>
+
+      <form id="projectForm">
+        <section class="admin-section" aria-labelledby="repositoryHeading">
+          <h2 id="repositoryHeading">Repository</h2>
+          <div class="admin-fields admin-fields-three">
+            <label>Owner
+              <input id="repoOwner" name="owner" autocomplete="organization" required placeholder="your-account">
+            </label>
+            <label>Repository
+              <input id="repoName" name="repository" list="repositorySuggestions" autocomplete="off" required placeholder="your-site" aria-describedby="repoSearchStatus">
+              <datalist id="repositorySuggestions"></datalist>
+            </label>
+            <label>Publishing branch
+              <input id="repoBranch" name="branch" required value="main" placeholder="main">
+            </label>
+          </div>
+          <p class="admin-help" id="repoSearchStatus" role="status" aria-live="polite">Enter an account name to search its public GitHub repositories. Private repositories can be entered manually.</p>
+          <label class="token-field">Fine-grained GitHub token
+            <input id="githubToken" name="token" type="password" autocomplete="off" required>
+          </label>
+          <p class="admin-help">Use a fine-grained token limited to this repository with <strong>Contents: Read and write</strong>. It is used only for this publish and is never saved in the page or browser storage.</p>
+        </section>
+
+        <section class="admin-section" aria-labelledby="projectHeading">
+          <h2 id="projectHeading">Project details</h2>
+          <div class="admin-fields">
+            <label>Project title
+              <input id="projectTitle" name="title" required maxlength="80" placeholder="Violet Acetate">
+            </label>
+            <label>Category
+              <input id="projectCategory" name="category" required maxlength="40" placeholder="Eyewear design">
+            </label>
+          </div>
+          <label>Description
+            <textarea id="projectDescription" name="description" required maxlength="240" rows="3" placeholder="A short description shown on the project card."></textarea>
+          </label>
+          <div class="admin-fields">
+            <label>Cover image
+              <input id="coverFile" name="cover" type="file" accept="image/webp,.webp" required>
+              <span class="admin-help">WebP only, up to 10 MB.</span>
+            </label>
+          </div>
+        </section>
+
+        <div class="admin-submit">
+          <button id="publishButton" type="submit">Publish project</button>
+          <span id="publishStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <aside class="admin-note">
+        <strong>First-time setup:</strong> enable GitHub Pages for this repository and set its build source to <strong>GitHub Actions</strong>. The included workflow deploys commits pushed to the <code>main</code> branch.
+      </aside>
+    </main>
+  </div>
+  <script src="theme.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

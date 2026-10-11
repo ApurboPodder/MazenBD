@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Mazen(BD) Industries LTD</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body class="gallery-page project-page">
+  <div class="gallery-app">
+    <header class="gallery-header">
+      <a class="brand-link" href="index.html" aria-label="Mazen(bd) Industries LTD — Home">
+        <img class="site-logo" src="assets/Logo/Mazen%20Logo.png" alt="Mazen(BD) Industries LTD">
+        <span class="brand-title">Project details</span>
+      </a>
+      <nav class="gallery-header-nav" aria-label="Site navigation">
+        <a class="gallery-link" href="index.html">Home</a>
+        <a class="gallery-link" href="gallery.html">All projects</a>
+        <button class="gallery-link theme-switch" type="button" data-theme-toggle>Dark mode</button>
+      </nav>
+    </header>
+
+    <main class="project-detail-main">
+      <a class="project-back-link" href="gallery.html">← Back to all projects</a>
+      <section id="projectDetail" class="project-detail" aria-live="polite">
+        <div class="project-detail-copy">
+          <p class="eyebrow" id="projectCategory">PROJECT</p>
+          <h1 id="projectTitle">Loading project…</h1>
+          <p class="project-detail-description" id="projectDescription"></p>
+          <a class="project-configurator-link" id="projectConfiguratorLink" href="#" hidden>Open model in configurator <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="project-detail-images" id="projectImages" aria-label="Project images"></div>
+      </section>
+      <p class="project-detail-status" id="projectStatus" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="gallery-footer">
+      <span>MAZEN(BD) INDUSTRIES LTD</span>
+      <span>Eyewear, made personal.</span>
+    </footer>
+  </div>
+  <dialog class="project-image-lightbox" id="projectImageLightbox" aria-label="Project image gallery">
+    <button class="project-image-lightbox-close" id="projectImageLightboxClose" type="button" aria-label="Close image">×</button>
+    <button class="project-image-lightbox-previous" id="projectImageLightboxPrevious" type="button" aria-label="Previous image">‹</button>
+    <figure class="project-image-lightbox-content">
+      <img id="projectImageLightboxImage" alt="">
+      <figcaption id="projectImageLightboxCaption"></figcaption>
+    </figure>
+    <button class="project-image-lightbox-next" id="projectImageLightboxNext" type="button" aria-label="Next image">›</button>
+  </dialog>
+  <script src="theme.js"></script>
+  <script src="project.js"></script>
+</body>
+</html>
