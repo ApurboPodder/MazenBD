@@ -212,10 +212,9 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
       const modelUrl = new URL(modelPath, window.location.href);
       if (
         modelUrl.origin !== window.location.origin ||
-        !modelUrl.pathname.startsWith("/assets/") ||
-        !modelUrl.pathname.toLowerCase().endsWith(".glb")
+        !/(?:^|\/)assets\/.+\.glb$/i.test(modelUrl.pathname)
       ) {
-        throw new Error("Only same-site GLB files in the assets folder can be opened.");
+        throw new Error("Only same-site GLB files under an assets folder can be opened.");
       }
 
       modelStatus.textContent = "Loading project model…";
